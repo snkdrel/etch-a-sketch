@@ -26,5 +26,13 @@ rows.forEach( (r) => {
 
 const cells = document.querySelectorAll('.cell');
 cells.forEach( (c) => {
-    c.style.cssText = 'flex: auto; width:auto; height: 100px; width: 100px';
+    c.style.cssText = 'flex: auto; width:auto; width: 10px; height: 10px;';
+});
+
+// Change color when hovering
+cells.forEach( (c) => {
+    c.addEventListener('mouseover', function(){
+        console.log(this);
+        this.style.backgroundColor = 'black';
+    });
 });
