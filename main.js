@@ -21,12 +21,12 @@ rowContainer.style.cssText = 'flex-direction: column;';
 
 const rows = document.querySelectorAll('.row');
 rows.forEach( (r) => {
-    r.setAttribute('style', 'display: flex; flex: auto;');
+    r.setAttribute('style', 'display: flex;');
 });
 
 const cells = document.querySelectorAll('.cell');
 cells.forEach( (c) => {
-    c.style.cssText = 'flex: auto; width:auto; width: 10px; height: 10px;';
+    c.style.cssText = 'width:auto; width: 40px; height: 40px;';
 });
 
 // Change color when hovering
