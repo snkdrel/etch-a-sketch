@@ -1,5 +1,5 @@
 const rowContainer = document.querySelector('.row-container');
-const gridWidth = 960; // Fixed width for grid (in pixels)
+const gridWidth = 800; // Fixed width for grid (in pixels)
 
 // create initial grid
 createGrid(16);
@@ -25,11 +25,24 @@ function createGrid(sqrsPerSide){
         }
         rowContainer.appendChild(currentRow);
     }
+
     // Change cell size
     adjustCellWidth(sqrsPerSide);
 
     // Add event listener to cells
     addFunctionToCells();
+}
+
+// Determine pixels per cell
+function adjustCellWidth(sqrsPerSide){
+    const cellWidth = gridWidth / sqrsPerSide;
+    const styleStr = 'width: ' + cellWidth + 'px; height: ' + cellWidth + 'px;' +
+    'background-color: #eeebe2;'; // change color too!
+
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach( (c) =>{
+        c.style.cssText = styleStr;
+    } );
 }
 
 // Change color when hovering
@@ -38,20 +51,9 @@ function  addFunctionToCells(){
 
     cells.forEach( (c) => {
         c.addEventListener('mouseover', function(){
-            this.style.backgroundColor = 'black';
+            this.style.backgroundColor = '#3c3c3c';
         });
     });   
-}
-
-// Determine pixels per cell
-function adjustCellWidth(sqrsPerSide){
-    const cellWidth = gridWidth / sqrsPerSide;
-    const styleStr = 'width: ' + cellWidth + 'px; height: ' + cellWidth + 'px;';
-
-    const cells = document.querySelectorAll('.cell');
-    cells.forEach( (c) =>{
-        c.style.cssText = styleStr;
-    } );
 }
 
 // Select number of sides

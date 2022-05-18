@@ -1,3 +1,10 @@
+/*Color palette https://www.color-hex.com/color-palette/11223 */
+
+body{
+    text-align: center;
+    background-color: #61615f;
+}
+
 .row-container{
     display: flex;
     flex-direction: column;
@@ -6,4 +13,11 @@
 
 .row{
     display: flex;
+}
+
+.button-sides{
+    margin: 28px;
+    font-size: 32px;
+    color: #3c3c3c;
+    background-color: #eeeee4;
 }
