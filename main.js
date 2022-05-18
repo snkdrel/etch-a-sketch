@@ -1,4 +1,5 @@
 const rowContainer = document.querySelector('.row-container');
+const gridWidth = 960; // Fixed width for grid (in pixels)
 
 // create initial grid
 createGrid(16);
@@ -24,6 +25,8 @@ function createGrid(sqrsPerSide){
         }
         rowContainer.appendChild(currentRow);
     }
+    // Change cell size
+    adjustCellWidth(sqrsPerSide);
 
     // Add event listener to cells
     addFunctionToCells();
@@ -38,6 +41,17 @@ function  addFunctionToCells(){
             this.style.backgroundColor = 'black';
         });
     });   
+}
+
+// Determine pixels per cell
+function adjustCellWidth(sqrsPerSide){
+    const cellWidth = gridWidth / sqrsPerSide;
+    const styleStr = 'width: ' + cellWidth + 'px; height: ' + cellWidth + 'px;';
+
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach( (c) =>{
+        c.style.cssText = styleStr;
+    } );
 }
 
 // Select number of sides
